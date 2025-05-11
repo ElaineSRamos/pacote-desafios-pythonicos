@@ -15,9 +15,11 @@ onde todas as instancias de stra foram substituidas por strb.
 
 def fix_start(s):
     # +++ SUA SOLUÇÃO +++
-    return
-
-
+    first_char = s[0]
+    rest = s[1:].replace(first_char, '*') # string s da posição 1 até o final, se o caracter for igual a first_char entao troca por
+    return first_char + rest
+  
+ 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
 def test(f, in_, expected):

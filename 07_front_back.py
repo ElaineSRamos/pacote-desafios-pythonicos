@@ -11,9 +11,16 @@ Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
 def front_back(a, b):
-    # +++ SUA SOLUÇÃO +++
-    return
+    # Calcula os pontos de divisão para as strings a e b
+    mid_a = (len(a) + 1) // 2  # Metade da frente de 'a' (inclui o caractere extra se ímpar)
+    mid_b = (len(b) + 1) // 2  # Metade da frente de 'b' (inclui o caractere extra se ímpar)
 
+    # Divide as strings em frente e trás
+    a_front, a_back = a[:mid_a], a[mid_a:]
+    b_front, b_back = b[:mid_b], b[mid_b:]
+
+    # Retorna a combinação na forma desejada
+    return a_front + b_front + a_back + b_back
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
@@ -39,3 +46,4 @@ if __name__ == '__main__':
     test(front_back, ('abcd', 'xy'), 'abxcdy')
     test(front_back, ('abcde', 'xyz'), 'abcxydez')
     test(front_back, ('Kitten', 'Donut'), 'KitDontenut')
+    test(front_back, ('pytho', 'nicos'), 'pytnichoos') 

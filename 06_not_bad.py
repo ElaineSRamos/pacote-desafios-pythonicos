@@ -11,9 +11,14 @@ Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 
 def not_bad(s):
     # +++ SUA SOLUÇÃO +++
-    return
-
-
+    not_index = s.find('not')
+    bad_index = s.find('bad')
+    if not_index != -1 and bad_index != -1 and not_index < bad_index:
+        return s[:not_index] + 'good' + s[bad_index + 3:]
+    else:
+        return s
+    # Se não encontrar 'not' ou 'bad', ou se 'bad' aparecer antes de 'not',
+    # retorna a string original sem alterações. 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
 def test(f, in_, expected):

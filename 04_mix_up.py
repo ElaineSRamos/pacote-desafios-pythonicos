@@ -14,8 +14,10 @@ Assuma que a e b tem tamanho 2 ou maior.
 
 def mix_up(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
-
+    first_char = a[0]+a[1]
+    second_char = b[0]+b[1]
+    result =  second_char+a[2:] +" "+ first_char+b[2:] 
+    return result
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
